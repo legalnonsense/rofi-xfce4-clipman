@@ -1,0 +1,8 @@
+#!
+
+command = 'rofi -dmenu "$@" -no-sort -l 50 -i -p "Copy:" format -q -width 2500'
+ps = subprocess.Popen(('ls'), stdout=subprocess.PIPE)
+output = subprocess.check_output(command.split(), stdin=ps.stdout)
+ps.wait()
+
+
