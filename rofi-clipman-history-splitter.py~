@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+import re
+import sys
+from os.path import expanduser
+
+with open(expanduser("~") + "/.cache/xfce4/clipman/textsrc", "r") as f:
+    text = f.read()
+
+entries = text.findall(".+?\\\\\\;", text)
+
+
+for entry in entries:
+    sys.stdout.write(entry.replace("\\s", " ").replace("\\n", "\n").replace("\\;", ""))
+        sys.stdout.write("\n")

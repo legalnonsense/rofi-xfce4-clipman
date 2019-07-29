@@ -1,0 +1,11 @@
+#!/bin/bash
+
+
+str=$(cat ~/.cache/xfce4/clipman/textsrc)
+IFS='\n'
+read -ra array <<< "$str"
+for i in "${array[@]}"; do
+    echo "$i"
+done
+IFS=' '
+
